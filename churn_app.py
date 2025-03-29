@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
-# Load the saved model
-model = joblib.load("pruned_decision_tree.pkl")
+# Load the pruned decision tree model
+with open("pruned_decision_tree.pkl", "rb") as file:
+    model = pickle.load(file)
 
 # App Title
 st.title("Customer Churn Prediction App")
